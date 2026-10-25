@@ -17,7 +17,7 @@ let package = Package(
             targets: ["ImageCharts"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/swift-crypto.git", from: "3.0.0")
+        .package(url: "https://github.com/apple/swift-crypto.git", from: "3.15.1")
     ],
     targets: [
         .target(
