@@ -122,7 +122,7 @@ public final class ImageCharts {
         return self.clone(key: "cht", value: value)
     }
 
-    /// chart data
+    /// chart data. At most 1,000 series, chm line markers included, and 10,080 points in total.
     /// - Parameter value: The value for chd
     /// - Returns: A new ImageCharts instance with the parameter set
     public func chd(_ value: String) -> ImageCharts {
@@ -185,7 +185,7 @@ public final class ImageCharts {
         return self.clone(key: "chdls", value: value)
     }
 
-    /// Solid or dotted grid lines
+    /// Solid or dotted grid lines. A dashed grid needs at least 1 pixel per dash or space on average.
     /// - Parameter value: The value for chg
     /// - Returns: A new ImageCharts instance with the parameter set
     public func chg(_ value: String) -> ImageCharts {
@@ -199,7 +199,7 @@ public final class ImageCharts {
         return self.clone(key: "chco", value: value)
     }
 
-    /// chart title
+    /// chart title. Each text between pipes holds at most 10,000 characters. The texts of chtt, chdl, chl and chxl hold at most 10,000 characters together that are not printable ASCII: accented letters, other scripts, emoji and line breaks.
     /// - Parameter value: The value for chtt
     /// - Returns: A new ImageCharts instance with the parameter set
     public func chtt(_ value: String) -> ImageCharts {
@@ -241,7 +241,7 @@ public final class ImageCharts {
         return self.clone(key: "chm", value: value)
     }
 
-    /// line thickness and solid/dashed style
+    /// line thickness and solid/dashed style. A dashed line needs at least 1 pixel per dash or space on average, and a line width at most 2 times its dash period. Dashed lines run through at most 1,000 points in total.
     /// - Parameter value: The value for chls
     /// - Returns: A new ImageCharts instance with the parameter set
     public func chls(_ value: String) -> ImageCharts {
@@ -276,7 +276,7 @@ public final class ImageCharts {
         return self.clone(key: "chdlp", value: value)
     }
 
-    /// Background Fills Default: &#34;bg,s,FFFFFF&#34;
+    /// Background Fills. At most 100 gradient stops over all fills. Default: &#34;bg,s,FFFFFF&#34;
     /// - Parameter value: The value for chf
     /// - Returns: A new ImageCharts instance with the parameter set
     public func chf(_ value: String) -> ImageCharts {
@@ -297,7 +297,7 @@ public final class ImageCharts {
         return self.clone(key: "chan", value: value)
     }
 
-    /// doughnut chart inside label
+    /// doughnut chart inside label. The inside label holds at most 3,000 characters.
     /// - Parameter value: The value for chli
     /// - Returns: A new ImageCharts instance with the parameter set
     public func chli(_ value: String) -> ImageCharts {
