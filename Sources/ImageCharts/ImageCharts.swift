@@ -47,15 +47,15 @@ public final class ImageCharts {
     /// Free usage
     public init() {}
 
-    /// Enterprise & Enterprise+
-    /// - Parameter secret: (Enterprise and Enterprise+ subscription only) SECRET_KEY
+    /// Paid plans (Business, Enterprise)
+    /// - Parameter secret: (paid plans: Business, Enterprise) SECRET_KEY
     public init(secret: String?) {
         self.secret = secret
     }
 
-    /// Enterprise & Enterprise+
+    /// Paid plans (Business, Enterprise)
     /// - Parameters:
-    ///   - secret: (Enterprise and Enterprise+ subscription only) SECRET_KEY
+    ///   - secret: (paid plans: Business, Enterprise) SECRET_KEY
     ///   - timeout: Request timeout (in seconds) when calling toData() or toDataURI()
     public init(secret: String?, timeout: TimeInterval?) {
         self.secret = secret
@@ -64,11 +64,11 @@ public final class ImageCharts {
 
     /// On-premise configuration
     /// - Parameters:
-    ///   - protocol: (On-Premise subscription only) custom protocol. Default: "https"
-    ///   - host: (Enterprise, Enterprise+ and On-Premise subscription only) custom domain. Default: "image-charts.com"
-    ///   - port: (On-Premise subscription only) custom port. Default: 443
+    ///   - protocol: custom protocol ("http" with a custom domain). Default: "https"
+    ///   - host: (paid plans: Business, Enterprise, and On-Premise) custom domain. An Image-Charts custom domain has no TLS: set protocol to "http" and port to 80. Default: "image-charts.com"
+    ///   - port: custom port (80 with a custom domain). Default: 443
     ///   - pathname: (On-Premise subscription only) custom pathname. Default: "/chart"
-    ///   - secret: (Enterprise and Enterprise+ subscription only) SECRET_KEY
+    ///   - secret: (paid plans: Business, Enterprise) SECRET_KEY
     public init(`protocol`: String?, host: String?, port: Int?, pathname: String?, secret: String?) {
         if let `protocol` = `protocol` { self.protocol = `protocol` }
         if let host = host { self.host = host }
@@ -79,11 +79,11 @@ public final class ImageCharts {
 
     /// Full constructor with all options
     /// - Parameters:
-    ///   - protocol: (On-Premise subscription only) custom protocol. Default: "https"
-    ///   - host: (Enterprise, Enterprise+ and On-Premise subscription only) custom domain. Default: "image-charts.com"
-    ///   - port: (On-Premise subscription only) custom port. Default: 443
+    ///   - protocol: custom protocol ("http" with a custom domain). Default: "https"
+    ///   - host: (paid plans: Business, Enterprise, and On-Premise) custom domain. An Image-Charts custom domain has no TLS: set protocol to "http" and port to 80. Default: "image-charts.com"
+    ///   - port: custom port (80 with a custom domain). Default: 443
     ///   - pathname: (On-Premise subscription only) custom pathname. Default: "/chart"
-    ///   - secret: (Enterprise and Enterprise+ subscription only) SECRET_KEY
+    ///   - secret: (paid plans: Business, Enterprise) SECRET_KEY
     ///   - timeout: Request timeout (in seconds) when calling toData() or toDataURI()
     ///   - userAgent: Custom user-agent string
     public init(`protocol`: String?, host: String?, port: Int?, pathname: String?, secret: String?, timeout: TimeInterval?, userAgent: String?) {
@@ -304,7 +304,7 @@ public final class ImageCharts {
         return self.clone(key: "chli", value: value)
     }
 
-    /// image-charts enterprise `account_id`
+    /// Image-Charts paid plan `account_id`
     /// - Parameter value: The value for icac
     /// - Returns: A new ImageCharts instance with the parameter set
     public func icac(_ value: String) -> ImageCharts {
